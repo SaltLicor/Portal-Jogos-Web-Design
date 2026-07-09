@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Jogos</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Portal</h1>
+    </header>
+
+    <main>
+
+        <section class="jogos">
+
+            <div class="card">
+                <h2>Campo Minado</h2>
+                <p>Encontre todas as casas seguras.</p>
+
+                <button onclick="abrirDificuldades()">
+                    Jogar
+                </button>
+            </div>
+
+            <div class="card">
+                <h2>Jogo da Memória</h2>
+                <p>Encontre todos os pares de emojis</p>
+                <button onclick="abrirMemoriaDificuldades()">Jogar</button>
+            </div>
+
+            <div class="card">
+                <h2>Jogo da Velha</h2>
+                <p>Dois jogadores, X e O.</p>
+                <button onclick="abrirJogoVelha()">Jogar</button>
+            </div>
+
+            <div class="card desabilitado">
+                <h2>Outros Jogos..</h2>
+                <p>Em breve...</p>
+            </div>
+        </section>
+
+
+        <section id="Dificuldades" class="oculto">
+
+            <h2>Escolha a dificuldade</h2>
+
+            <button onclick="abrirCampoMinado()">
+                Facil
+            </button>
+            <button onclick="abrirCampoMinadoMedio()">
+                Médio
+            </button>
+            <button onclick="abrirCampoMinadoDificil()">
+                Difícil
+            </button>
+
+        </section>
+
+        <section id="campoMinado" class="oculto">
+
+            <h2>Campo Minado - Level Fácil</h2>
+
+            <p id="mensagem">
+                Clique em uma célula.
+            </p>
+
+            <div id="tabuleiro"></div>
+
+            <button onclick="reiniciarJogoFacil()">
+                Novo Jogo
+            </button>
+            <button onclick="voltarParaDificuldades()">Voltar</button>
+
+        </section>
+
+        <section id="campoMinadoMedio" class="oculto">
+
+            <h2>Campo Minado - Level Médio</h2>
+
+            <p id="mensagemM">
+                Clique em uma célula.
+            </p>
+
+            <div id="tabuleiroM"></div>
+
+            <button onclick="reiniciarJogoMedio()">
+                Novo Jogo
+            </button>
+            <button onclick="voltarParaDificuldades()">Voltar</button>
+
+        </section>
+
+        <section id="campoMinadoDificil" class="oculto">
+
+            <h2>Campo Minado - Level Difícil</h2>
+
+            <p id="mensagemD">
+                Clique em uma célula.
+            </p>
+
+            <div id="tabuleiroD"></div>
+
+            <button onclick="reiniciarJogoDificil()">
+                Novo Jogo
+            </button>
+            <button onclick="voltarParaDificuldades()">Voltar</button>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+    <!-- Sessão de jogo da memória-->
+
+    <section id="memoriaDificuldades" class="oculto">
+        <h2>Escolha a dificuldade</h2>
+        <button onclick="iniciarMemoria('facil')">Fácil (4 pares)</button>
+        <button onclick="iniciarMemoria('medio')">Médio (6 pares)</button>
+        <button onclick="iniciarMemoria('dificil')">Difícil (8 pares)</button>
+    </section>
+
+    <section id="jogoMemoria" class="oculto">
+        <h2 id="memoriaTitulo">Jogo da Memória - Fácil</h2>
+        <p id="memoriaMensagem">Clique em uma carta para virar.</p>
+        <p>Jogadas: <span id="memoriaContador">0</span></p>
+        <div id="memoriaTabuleiro"></div>
+        <button onclick="reiniciarMemoria()">Novo Jogo</button>
+        <button onclick="voltarMenuMemoria()">Voltar</button>
+    </section>
+
+    <!-- TABULEIRO DO JOGO DA VELHA -->
+    <section id="jogoVelha" class="oculto">
+        <h2>Jogo da Velha</h2>
+        <div id="velhaStatus">Vez do jogador <span id="velhaVez">X</span></div>
+        <div id="velhaTabuleiro"></div>
+        <div id="velhaMensagem"></div>
+        <button onclick="reiniciarVelha()">Reiniciar Partida</button>
+        <button onclick="voltarMenuVelha()">Voltar</button>
+    </section>
+</body>
+
+</html>
